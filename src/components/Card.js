@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-import { FaBookmark } from 'react-icons/fa'; // Import FaBookmark icon
+import { FaBookmark } from 'react-icons/fa';
 
 import "../style/Card.css";
+import itemsData from "../data/itemsData.json"; // Import JSON data
 
-function ClothCard({ imgSrc, title, price, isEcoFriendly, isVegan }) {
-    const [isSaved, setIsSaved] = useState(false); // State to manage save button's appearance
+function ClothCard({ itemId }) {
+    const [isSaved, setIsSaved] = useState(false);
 
-    // Function to handle saving the item
+    const item = itemsData.find(item => item.id === itemId);
+
+    if (!item) {
+        return <div>No item found!</div>;
+    }
+
+    const { title, imgSrc, price, isEcoFriendly, isVegan } = item;
+
     const handleSave = () => {
-        // Implement logic to add item to saved list
-        console.log('Item saved!');
-        setIsSaved(!isSaved); // Toggle isSaved state
+        setIsSaved(!isSaved);
     };
 
     return (
@@ -30,12 +36,11 @@ function ClothCard({ imgSrc, title, price, isEcoFriendly, isVegan }) {
           </div>
           <div className="mt-3">
             <Button className="mr-2" variant="info">Add to Cart</Button>
-            {/* Use FaBookmark icon as the save button */}
             <FaBookmark className={`save-icon ${isSaved ? 'saved' : ''}`} onClick={handleSave} />
           </div>
         </Card.Body>
       </Card>
     );
-  }
-  
-  export default ClothCard;
+}
+
+export default ClothCard;

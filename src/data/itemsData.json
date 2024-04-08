@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Example Title 1",
+      "imgSrc": "https://i.pinimg.com/564x/ad/55/b4/ad55b41fad09fd39b2a4b49ac597bb76.jpg",
+      "price": "$10",
+      "isEcoFriendly": true,
+      "isVegan": false
+    },
+    {
+      "id": 2,
+      "title": "Example Title 2",
+      "imgSrc": "https://i.pinimg.com/564x/ad/55/b4/ad55b41fad09fd39b2a4b49ac597bb76.jpg",
+      "price": "$20",
+      "isEcoFriendly": false,
+      "isVegan": true
+    },
+    {
+        "id": 3,
+        "title": "Example Title 2",
+        "imgSrc": "https://i.pinimg.com/564x/ad/55/b4/ad55b41fad09fd39b2a4b49ac597bb76.jpg",
+        "price": "$20",
+        "isEcoFriendly": false,
+        "isVegan": true
+      }
+  ]
+  
