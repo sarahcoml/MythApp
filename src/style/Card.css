@@ -1,0 +1,34 @@
+.cloth-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 90px;
+    padding: 60px; /* Add padding around the container */
+  }
+  
+  .cloth-card {
+    border: 3px solid #922424;
+    padding: 20px; /* Add padding inside each card */
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .card-img-container {
+    position: relative;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 16px 16px 0 0; /* Rounded top corners */
+  }
+  
+  .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale down the image to fill the container */
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
