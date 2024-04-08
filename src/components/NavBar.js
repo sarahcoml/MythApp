@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { FaBars, FaTimes, FaShoppingCart, FaStar } from "react-icons/fa";
+import {FaShoppingCart, FaStar } from "react-icons/fa";
 import "../style/NavBar.css";
 
 function NavBar() {
@@ -19,6 +19,22 @@ function NavBar() {
             <h3>UrbanRoots</h3>
             <nav ref={navRef}>
                 <a href="/#">Home</a>
+                {/* <div className="dropdown">
+                    <button className="dropbtn" onClick={toggleDropdown}>Categories</button>
+                    {dropdownVisible && (
+                        <div className="dropdown-content">
+                            <a href="/#">Sustainable</a>
+                            <a href="/#">Eco-Friendly</a>
+                            <a href="/#">Vegan</a>
+                        </div>
+                    )}
+                </div> */}
+                <div className="pages">
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact</a>
+                <a href="/shop">Shop</a>
+                </div>
+
                 <div className="dropdown">
                     <button className="dropbtn" onClick={toggleDropdown}>Categories</button>
                     {dropdownVisible && (
@@ -29,20 +45,18 @@ function NavBar() {
                         </div>
                     )}
                 </div>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact</a>
                 <div className="nav-icons">
                     <a href="/cart"><FaShoppingCart /></a>
                     <a href="/saved"><FaStar /></a>
                     <a href="/signup" className="signup-btn">Sign Up</a>
                 </div>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                {/* <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     <FaTimes />
-                </button>
+                </button> */}
             </nav>
-            <button className="nav-btn" onClick={showNavbar}>
+            {/* <button className="nav-btn" onClick={showNavbar}>
                 <FaBars />
-            </button>
+            </button> */}
         </header>
     );
 }
