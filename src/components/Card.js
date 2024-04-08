@@ -5,16 +5,9 @@ import Badge from 'react-bootstrap/Badge';
 import { FaBookmark } from 'react-icons/fa';
 
 import "../style/Card.css";
-import itemsData from "../data/itemsData.json"; // Import JSON data
 
-function ClothCard({ itemId }) {
+function ClothCard({ item }) {
     const [isSaved, setIsSaved] = useState(false);
-
-    const item = itemsData.find(item => item.id === itemId);
-
-    if (!item) {
-        return <div>No item found!</div>;
-    }
 
     const { title, imgSrc, price, isEcoFriendly, isVegan } = item;
 
