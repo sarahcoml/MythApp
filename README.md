@@ -17,3 +17,6 @@ You may also see any lint errors in the console.
 
 If the site doesn't launch, type this command in the terminal:
 ### `npm install`
+
+
+Live Site: https://myth-app.vercel.app/
