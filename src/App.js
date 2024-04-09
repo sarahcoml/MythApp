@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Navbar from "./components/NavBar";
 import ClothCard from "./components/Card";
 import FilterDropdown from "./components/FilterDropdown";
-import Aggregator from "./components/Aggregator"; // Import the Aggregator component
+import Aggregator from "./components/Aggregator"; 
 import itemsData from "./data/itemsData.json";
 
 function App() {
   const [items, setItems] = useState(itemsData);
   const [filteredItems, setFilteredItems] = useState(items);
-  const [cart, setCart] = useState([]); // Use only one state variable for the cart
+  const [cart, setCart] = useState([]); 
 
   const handleSort = (sortBy) => {
     let sortedItems = [...filteredItems];
@@ -37,24 +37,26 @@ function App() {
   };
 
   const addToCart = (item) => {
-    setCart([...cart, item]); // Update the cart state variable when an item is added to the cart
+    setCart([...cart, item]); 
   };
 
-  // Define function to calculate total
-  const calculateTotal = () => {
-    return cart.reduce((total, item) => total + parseFloat(item.price.replace('$', '')), 0);
-  };
 
   return (
     <React.Fragment>
       <Navbar />
+
+      <button className='resetbutton'>
+  <a href="/reset">reset</a>
+</button>
+
       <FilterDropdown handleSort={handleSort} handleFilter={handleFilter} />
       <div className="cloth-container">
         {filteredItems.map(item => (
-          <ClothCard key={item.id} item={item} addToCart={addToCart} /> // Pass addToCart function to ClothCard
+          <ClothCard key={item.id} item={item} addToCart={addToCart} /> 
         ))}
       </div>
       <Aggregator items={cart} /> 
+
 {/* 
       <div className="cart-container">
           <h2>Cart</h2>

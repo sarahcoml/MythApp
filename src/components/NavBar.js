@@ -16,7 +16,7 @@ function NavBar() {
 
     return (
         <header>
-            <h3>UrbanRoots</h3>
+            <h3>urbanroots</h3>
             <nav ref={navRef}>
                 <a href="/#">Home</a>
                 {/* <div className="dropdown">
@@ -33,6 +33,7 @@ function NavBar() {
                 <a href="/about">About Us</a>
                 <a href="/contact">Contact</a>
                 <a href="/shop">Shop</a>
+
                 </div>
 
                 <div className="dropdown">

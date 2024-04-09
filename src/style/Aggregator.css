@@ -1,0 +1,27 @@
+.aggregator-section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .aggregator-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .aggregator-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .aggregator-section li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .aggregator-section strong {
+    display: block;
+    margin-top: 10px;
+  }
+  

@@ -1,5 +1,6 @@
 import React from 'react';
 import itemsData from '../data/itemsData'; 
+import "../style/Aggregator.css";
 
 const Aggregator = ({ items = itemsData }) => {
     const totalSum = items.reduce((accumulator, currentItem) => accumulator + parseFloat(currentItem.price.replace('$', '')), 0).toFixed(2);
