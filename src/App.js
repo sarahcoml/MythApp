@@ -40,14 +40,17 @@ function App() {
     setCart([...cart, item]); 
   };
 
+  const removeFromCart = (itemToRemove) => {
+    setCart(cart.filter(item => item.id !== itemToRemove.id));
+  };
 
   return (
     <React.Fragment>
       <Navbar />
 
       <button className='resetbutton'>
-  <a href="/reset">reset</a>
-</button>
+        <a href="/reset">reset</a>
+      </button>
 
       <FilterDropdown handleSort={handleSort} handleFilter={handleFilter} />
       <div className="cloth-container">
@@ -55,19 +58,20 @@ function App() {
           <ClothCard key={item.id} item={item} addToCart={addToCart} /> 
         ))}
       </div>
-      <Aggregator items={cart} /> 
-
+      <Aggregator items={cart} removeFromCart={removeFromCart} /> 
 {/* 
       <div className="cart-container">
           <h2>Cart</h2>
           {cart.length === 0 && <p>The cart is empty.</p>}
           <ul>
             {cart.map((item, index) => (
-              <li key={index}>{item.name} - ${item.price}</li>
+              <li key={index}>{item.name} - ${item.price}
+                <button onClick={() => removeFromCart(item)}>Remove</button>
+              </li>
             ))}
           </ul>
           {cart.length > 0 && <p>Total: ${calculateTotal().toFixed(2)}</p>}
-        </div> */}
+        </div>  */}
     </React.Fragment>
   );
 }
